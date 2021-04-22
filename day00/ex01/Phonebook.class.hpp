@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 17:01:53 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/22 13:44:51 by mazor            ###   ########.fr       */
+/*   Created: 2021/04/22 12:25:49 by mazor             #+#    #+#             */
+/*   Updated: 2021/04/22 16:34:21 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
+#ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
-# include <string>
-# include <iostream>
-# include <iomanip>
+#include "Contact.class.hpp"
 
-class Contact
+class Phonebook
 {
 	public:
-		Contact(void);
-		~Contact(void);
-
-		void		printShortContact(void);
-		void		printFullContact(void);
+		Phonebook(void);
+		~Phonebook(void);
 		
-		static int	getNbContact(void);
+		void	exit(void);
+		void	add(void);
+		void	search(void);
 
 	private:
-		std::string _personalDataContent[11];
-		int			_index;
-
-		static const std::string	_personalDataTitle[11];
-		static int	_nbContact;
+		Contact *_contacts[8];
 };
 #endif

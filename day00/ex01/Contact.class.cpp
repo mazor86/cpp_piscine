@@ -6,15 +6,11 @@
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:02 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/21 17:03:25 by mazor            ###   ########.fr       */
+/*   Updated: 2021/04/22 16:55:27 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
 #include "Contact.class.hpp"
-
-
 
 Contact::Contact(void)
 {
@@ -27,12 +23,14 @@ Contact::Contact(void)
 		std::getline(std::cin, this->_personalDataContent[i]);
 
 	}
+	std::cout << "+contact";
 	return ;
 }
 
 Contact::~Contact(void)
 {
 	Contact::_nbContact -= 1;
+	std::cout << "-contact";
 	return ;
 }
 
@@ -53,6 +51,17 @@ void	Contact::printShortContact(void)
 	}
 	std::cout << std::endl;
 }
+
+void	Contact::printFullContact(void)
+{
+	for (int i = 0; i < 11; i++)
+	{
+		std::cout << Contact::_personalDataTitle[i] << ": ";
+		std::cout << this->_personalDataContent[i] << std::endl;
+	}
+	return ;
+}
+
 int		Contact::getNbContact(void)
 {
 	return Contact::_nbContact;
