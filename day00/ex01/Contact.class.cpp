@@ -6,55 +6,48 @@
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:02 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/22 16:55:27 by mazor            ###   ########.fr       */
+/*   Updated: 2021/04/22 23:01:22 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 
-Contact::Contact(void)
-{
-	return ;
-}
+Contact::Contact(void){};
 
-Contact::~Contact(void)
-{
-	return ;
-}
+Contact::~Contact(void){};
 
-void	Contact::printShortContact(void)
+void	Contact::printShortContact()
 {
 	std::cout << std::setfill(' ') << std::setw(10); 
 	std::cout << this->_index;
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << "|";
-		if (this->_personalDataContent[i].length() > 10)
-			std::cout << this->_personalDataContent[i].substr(0, 9) << ".";
+		if (this->_personalDataContent[i].length() > FIELD_WIDTH)
+			std::cout << this->_personalDataContent[i].substr(0, FIELD_WIDTH - 1) << ".";
 		else
 		{
-			std::cout << std::setfill(' ') << std::setw(10); 
+			std::cout << std::setfill(' ') << std::setw(FIELD_WIDTH); 
 			std::cout << this->_personalDataContent[i];
 		}
 	}
 	std::cout << std::endl;
 }
 
-void	Contact::printFullContact(void)
+void	Contact::printFullContact()
 {
 	for (int i = 0; i < 11; i++)
 	{
 		std::cout << Contact::_personalDataTitle[i] << ": ";
 		std::cout << this->_personalDataContent[i] << std::endl;
 	}
-	return ;
 }
 
 void 	Contact::addContact(Contact list[])
 {
 	int index = Contact::getNbContact();
 
-	if (index > 7)
+	if (index + 1 > MAX_CONTACT)
 		std::cout << "Phonebook is full. You can't add more then 8 contacts";
 	else
 	{
@@ -67,7 +60,6 @@ void 	Contact::addContact(Contact list[])
 			std::getline(std::cin, list[index]._personalDataContent[i]);
 		}
 	}
-	return ;
 }
 
 void 	Contact::searchContact(Contact list[])
@@ -100,12 +92,12 @@ void 	Contact::searchContact(Contact list[])
 	}
 }
 
-int		Contact::getNbContact(void)
+int		Contact::getNbContact()
 {
 	return Contact::_nbContact;
 }
 
-void 	Contact::_printHeader(void)
+void 	Contact::_printHeader()
 {
 	std::cout << std::endl;
 	std::cout << std::setfill(' ') << std::setw(10) << "index";

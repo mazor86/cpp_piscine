@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:01:53 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/22 13:44:51 by mazor            ###   ########.fr       */
+/*   Updated: 2021/04/22 22:58:05 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+
+# define MAX_CONTACT 8
+# define FIELD_WIDTH 10
 
 class Contact
 {

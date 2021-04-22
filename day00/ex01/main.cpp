@@ -6,7 +6,7 @@
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:30:07 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/22 16:57:38 by mazor            ###   ########.fr       */
+/*   Updated: 2021/04/22 22:57:25 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(void)
 {
 	std::string		command;
-	Contact			phonebook[8];
+	Contact			phonebook[MAX_CONTACT];
 
 	while (1)
 	{
