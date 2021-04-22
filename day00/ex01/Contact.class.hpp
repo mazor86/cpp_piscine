@@ -27,6 +27,8 @@ class Contact
 		void		printFullContact(void);
 		
 		static int	getNbContact(void);
+		static void	addContact(Contact list[]);
+		static void searchContact(Contact list[]);
 
 	private:
 		std::string _personalDataContent[11];
@@ -34,5 +36,7 @@ class Contact
 
 		static const std::string	_personalDataTitle[11];
 		static int	_nbContact;
+
+		static void _printHeader(void);
 };
 #endif

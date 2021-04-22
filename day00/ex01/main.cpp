@@ -11,27 +11,29 @@
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
 
 int		main(void)
 {
-	std::string	command;
-	Phonebook	book;
+	std::string		command;
+	Contact			phonebook[8];
 
 	while (1)
 	{
-		std::cout << "Number of contacts = " << Contact::getNbContact() << std::endl;
 		std::cout << "Please enter one of the following commands:" << std::endl;
 		std::cout << "ADD     SEARCH     EXIT" << std::endl;
 		std::getline(std::cin, command);
 		if (command == "ADD")
-			book.add();
+			Contact::addContact(phonebook);
 		else if (command == "SEARCH")
-			book.search();
+			Contact::searchContact(phonebook);
 		else if (command == "EXIT")
-			book.exit();
+		{
+			std::cout << "THANKS FOR USING OUR PHONEBOOK :)" << std::endl;
+			break ;
+		}
 		else
 			std::cout << "WRONG COMMAND!!!" << std::endl;
+		std::cout << std::endl;
 	}
 	return (0);
 }
