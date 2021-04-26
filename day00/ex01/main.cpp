@@ -6,11 +6,11 @@
 /*   By: mazor <mazor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:30:07 by mazor             #+#    #+#             */
-/*   Updated: 2021/04/22 22:57:25 by mazor            ###   ########.fr       */
+/*   Updated: 2021/04/26 18:05:35 by mazor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 int		main(void)
 {

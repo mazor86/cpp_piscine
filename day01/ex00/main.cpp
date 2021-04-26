@@ -19,6 +19,7 @@ void ponyOnTheStack()
 
 int	main()
 {
+	std::srand(std::time(0));
 	Pony *pony1 = new Pony();
 	std::cout << "***Ponies on the heap***" << std::endl << std::endl;
 	ponyOnTheHeap();
