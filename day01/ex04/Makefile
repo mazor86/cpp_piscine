@@ -1,8 +1,8 @@
 
-NAME = ex01
+NAME = ex04
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = ex01.cpp
+SRCS = ex04.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
