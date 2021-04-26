@@ -1,9 +1,9 @@
 
-NAME = ex02
+NAME = ex03
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Zombie.cpp ZombieEvent.cpp
-HDRS = Zombie.hpp ZombieEvent.hpp
+SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
+HDRS = Zombie.hpp ZombieHorde.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
