@@ -1,13 +1,17 @@
 #ifndef HUMAN_HPP
 # define HUMAN_HPP
 
+# include "Brain.hpp"
+
 class Human
 {
 private:
-	/* data */
+	const Brain _humanBrain;
 public:
-	Human(/* args */);
+	Human();
 	~Human();
+	Brain const &getBrain() const;
+	std::string	identify() const;
 };
 
 
