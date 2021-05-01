@@ -2,6 +2,8 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
+# define FRACT_LENGTH 8
 
 class Fixed {
 public:
@@ -19,8 +21,8 @@ public:
 
 private:
 	int _rawBits;
-	static const int _fractBit = 8;
+	static const int _fractBit = FRACT_LENGTH;
 };
 
-std::ostream & operator<<(std::ostream o, Fixed const & f);
+std::ostream & operator<<(std::ostream & o, Fixed const & f);
 #endif
