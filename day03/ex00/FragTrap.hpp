@@ -15,14 +15,15 @@ private:
 	unsigned int _meleeAttackDamage;
 	unsigned int _rangeAttackDamage;
 	unsigned int _armorDamageReduction;
-	static unsigned int _maxHitPoints;
-	static unsigned int _maxEnergyPoints;
+	unsigned int _maxHitPoints;
+	unsigned int _maxEnergyPoints;
 
 
 public:
 	FragTrap();
 	~FragTrap();
-	FragTrap(std::string name);
+
+	FragTrap(std::string const & name);
 	FragTrap(FragTrap const &src);
 	FragTrap & operator=(FragTrap const & rhs);
 
@@ -30,9 +31,24 @@ public:
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	unsigned int getHP(void);
-	unsigned int getEP(void);
-	std::string getName(void);
+
+	unsigned int getHitPoints() const;
+
+	unsigned int getEnergyPoints() const;
+
+	unsigned int getLevel() const;
+
+	const std::string &getName() const;
+
+	unsigned int getMeleeAttackDamage() const;
+
+	unsigned int getRangeAttackDamage() const;
+
+	unsigned int getArmorDamageReduction() const;
+
+	unsigned int getMaxHitPoints() const;
+
+	unsigned int getMaxEnergyPoints() const;
 
 };
 
