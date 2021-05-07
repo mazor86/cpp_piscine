@@ -4,20 +4,26 @@
 
 # include <string>
 # include <iostream>
+# include <ctime>
 
 class FragTrap
 {
 private:
 	unsigned int _hitPoints;
+	unsigned int _maxHitPoints;
 	unsigned int _energyPoints;
+	unsigned int _maxEnergyPoints;
 	unsigned int _level;
 	std::string _name;
 	unsigned int _meleeAttackDamage;
 	unsigned int _rangeAttackDamage;
 	unsigned int _armorDamageReduction;
-	unsigned int _maxHitPoints;
-	unsigned int _maxEnergyPoints;
 
+	void _clapInTheBoxAttack(std::string const & target);
+	void _gunWizardAttack(std::string const & target);
+	void _laserInfernoAttack(std::string const & target);
+	void _oneShotWonderAttack(std::string const & target);
+	void _pirateShipModeAttack(std::string const & target);
 
 public:
 	FragTrap();
@@ -31,6 +37,7 @@ public:
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	void vaulthunter_dot_exe(std::string const & target);
 
 	unsigned int getHitPoints() const;
 
