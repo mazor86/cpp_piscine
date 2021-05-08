@@ -12,7 +12,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(std::string const & name): ClapTrap(name)
 {
-	std::cout << "FragTrap class contstructor for called!" << std::endl;
+	std::cout << "FragTrap class parameterized contstructor called!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src)

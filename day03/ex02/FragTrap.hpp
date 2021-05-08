@@ -23,7 +23,6 @@ public:
 	FragTrap(std::string const & name);
 	FragTrap(FragTrap const &src);
 
-	FragTrap & operator=(FragTrap const & rhs);
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void vaulthunter_dot_exe(std::string const & target);

@@ -17,22 +17,10 @@ public:
 
 	ScavTrap(std::string const & name);
 	ScavTrap(ScavTrap const &src);
-	ScavTrap & operator=(ScavTrap const & rhs);
 
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void challengeNewcomer(void) const;
-
-	unsigned int getHitPoints() const;
-	unsigned int getEnergyPoints() const;
-	unsigned int getLevel() const;
-	const std::string &getName() const;
-	unsigned int getMeleeAttackDamage() const;
-	unsigned int getRangeAttackDamage() const;
-	unsigned int getArmorDamageReduction() const;
-	unsigned int getMaxHitPoints() const;
-	unsigned int getMaxEnergyPoints() const;
 };
-
 
 #endif

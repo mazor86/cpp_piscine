@@ -3,40 +3,23 @@
 ScavTrap::ScavTrap(): ClapTrap()
 {
 
-	std::cout << "ClapTrap class default contstructor  called!" << std::endl;
+	std::cout << "ScavTrap class default contstructor  called!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap class destructor called" << std::endl << std::endl;
+	std::cout << "ScavTrap class destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const & name)
-		: _hitPoints(100), _maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50),
-		  _level(1), _name(name),
-		  _meleeAttackDamage(20), _rangeAttackDamage(15), _armorDamageReduction(3)
+ScavTrap::ScavTrap(std::string const & name): ClapTrap(name)
 {
-	std::cout << "Contstructor for SV4G-TP <" << this->_name << "> called!" << std::endl << std::endl;
+	std::cout << "ScavTrap class parametrized contstructor called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	*this = src;
-	std::cout << "Copy constructor SV4G-TP called!" << std::endl << std::endl;
-}
-
-ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
-{
-	this->_name = rhs.getName();
-	this->_hitPoints = rhs.getHitPoints();
-	this->_maxHitPoints = rhs.getMaxHitPoints();
-	this->_energyPoints = rhs.getEnergyPoints();
-	this->_maxEnergyPoints = rhs.getMaxEnergyPoints();
-	this->_level = rhs.getLevel();
-	this->_meleeAttackDamage = rhs. getMeleeAttackDamage();
-	this->_rangeAttackDamage = rhs.getRangeAttackDamage();
-	this->_armorDamageReduction = rhs.getArmorDamageReduction();
-	return (*this);
+	std::cout << "ScavTrap class copy constructor called!" << std::endl;
 }
 
 void ScavTrap::rangedAttack(const std::string &target)
@@ -46,7 +29,6 @@ void ScavTrap::rangedAttack(const std::string &target)
 	std::cout << " points of damage!" << std::endl;
 	std::cout << this->_name << ": Eat bomb, baddie!" << std::endl;
 	std::cout << std::endl;
-
 }
 
 void ScavTrap::meleeAttack(const std::string &target)
@@ -55,41 +37,6 @@ void ScavTrap::meleeAttack(const std::string &target)
 	std::cout << target << " in the melee, causing " << this->getMeleeAttackDamage();
 	std::cout << " points of damage!" << std::endl;
 	std::cout << this->_name << ": Heyyah! Take that!" << std::endl;
-	std::cout << std::endl;
-
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	if (amount <= this->getArmorDamageReduction())
-		std::cout << this->_name << ": Ooooh. Was that your big hit?" << std::endl << std::endl;
-	else
-	{
-		if (this->_hitPoints > (amount - this->getArmorDamageReduction()))
-		{
-			this->_hitPoints -= (amount - this->getArmorDamageReduction());
-			std::cout << this->_name << ": Why do I even feel pain?!" << std::endl;
-			std::cout << "[ " << this->_name << ": HP = " << this->getHitPoints() << " ]" <<std::endl;
-			std::cout << std::endl;
-		}
-		else
-		{
-			this->_hitPoints = 0;
-			std::cout << this->_name << ": Crit-i-cal!" << std::endl;
-			std::cout << "[ " << this->_name << ": HP = " << this->getHitPoints() << " ]" <<std::endl;
-			std::cout << std::endl;
-		}
-	}
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	this->_hitPoints += amount;
-	if (this->_hitPoints > 100)
-		this->_hitPoints = 100;
-	std::cout << this->_name << ": I found " << amount << " HP!";
-	std::cout << "Health! Eww, what flavor is red?" << std::endl;
-	std::cout << "[ " << this->_name << ": HP = " << this->getHitPoints() << " ]" <<std::endl;
 	std::cout << std::endl;
 }
 
@@ -154,49 +101,4 @@ void ScavTrap::_gameOfDice() const
 		std::cout << "Aw yeah!" << std::endl;
 	else
 		std::cout << "Yay! We both win!" << std::endl;
-}
-
-unsigned int ScavTrap::getHitPoints() const
-{
-	return _hitPoints;
-}
-
-unsigned int ScavTrap::getEnergyPoints() const
-{
-	return _energyPoints;
-}
-
-unsigned int ScavTrap::getLevel() const
-{
-	return _level;
-}
-
-const std::string &ScavTrap::getName() const
-{
-	return _name;
-}
-
-unsigned int ScavTrap::getMeleeAttackDamage() const
-{
-	return _meleeAttackDamage;
-}
-
-unsigned int ScavTrap::getRangeAttackDamage() const
-{
-	return _rangeAttackDamage;
-}
-
-unsigned int ScavTrap::getArmorDamageReduction() const
-{
-	return _armorDamageReduction;
-}
-
-unsigned int ScavTrap::getMaxHitPoints() const
-{
-	return _maxHitPoints;
-}
-
-unsigned int ScavTrap::getMaxEnergyPoints() const
-{
-	return _maxEnergyPoints;
 }

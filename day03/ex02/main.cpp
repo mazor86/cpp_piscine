@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-void testFragTrap(void)
+void test_FragTrap(void)
 {
 	FragTrap frag1("R2D2");
 	FragTrap frag2("Wall-e");
@@ -32,7 +32,7 @@ void testFragTrap(void)
 	frag2.vaulthunter_dot_exe(frag1.getName());
 }
 
-void testScavTrap(void)
+void test_ScavTrap(void)
 {
 	ScavTrap scav1("Sparky");
 	ScavTrap scav2("Rust");
@@ -55,14 +55,22 @@ void testScavTrap(void)
 
 }
 
+void test_ClapTrap(void)
+{
+	ClapTrap clap2("Clank");
+	ClapTrap clap3(clap2);
+}
+
 int main()
 {
 	std::srand(std::time(0));
 
 	std::cout << "***** EX00 *****" << std::endl;
-	testFragTrap();
+	test_FragTrap();
 	std::cout << "***** EX01 *****" << std::endl;
-	testScavTrap();
+	test_ScavTrap();
+	std::cout << "***** EX02 *****" << std::endl;
+	test_ClapTrap();
 
 	return 0;
 }
