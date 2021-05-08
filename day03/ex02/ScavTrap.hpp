@@ -18,6 +18,8 @@ public:
 	ScavTrap(std::string const & name);
 	ScavTrap(ScavTrap const &src);
 
+	ScavTrap & operator=(ScavTrap const & rhs);
+
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void challengeNewcomer(void) const;

@@ -1,5 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
 
 void test_FragTrap(void)
 {
@@ -61,16 +63,33 @@ void test_ClapTrap(void)
 	ClapTrap clap3(clap2);
 }
 
+void test_NinjaTrap(void)
+{
+	NinjaTrap ninja1;
+	NinjaTrap ninja2("Bolt");
+	NinjaTrap ninja3(ninja1);
+	ClapTrap clap("Clap");
+	FragTrap frag("Frag");
+	ScavTrap scav("Scav");
+
+	ninja2.ninjaShoebox(clap);
+	ninja2.ninjaShoebox(frag);
+	ninja2.ninjaShoebox(scav);
+	ninja2.ninjaShoebox(ninja3);
+}
+
 int main()
 {
 	std::srand(std::time(0));
 
-	std::cout << "***** EX00 *****" << std::endl;
+	std::cout << "********** EX00 **********" << std::endl;
 	test_FragTrap();
-	std::cout << "***** EX01 *****" << std::endl;
+	std::cout << "********** EX01 **********" << std::endl;
 	test_ScavTrap();
-	std::cout << "***** EX02 *****" << std::endl;
+	std::cout << "********** EX02 **********" << std::endl;
 	test_ClapTrap();
+	std::cout << "********** EX03 **********" << std::endl;
+	test_NinjaTrap();
 
 	return 0;
 }

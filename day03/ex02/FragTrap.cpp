@@ -21,6 +21,12 @@ FragTrap::FragTrap(FragTrap const & src)
 	std::cout << "FragTrap class copy constructor called!" << std::endl;
 }
 
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
+{
+	ClapTrap::operator=(rhs);
+	return (*this);
+}
+
 void FragTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "FR4G-TP <" << this->_name << "> attacks ";

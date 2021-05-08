@@ -2,7 +2,11 @@
 
 ScavTrap::ScavTrap(): ClapTrap()
 {
-
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_meleeAttackDamage = 20;
+	this->_rangeAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "ScavTrap class default contstructor  called!" << std::endl;
 }
 
@@ -13,6 +17,11 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(std::string const & name): ClapTrap(name)
 {
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_meleeAttackDamage = 20;
+	this->_rangeAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "ScavTrap class parametrized contstructor called!" << std::endl;
 }
 
@@ -20,6 +29,12 @@ ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	*this = src;
 	std::cout << "ScavTrap class copy constructor called!" << std::endl;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
+{
+	ClapTrap::operator=(rhs);
+	return (*this);
 }
 
 void ScavTrap::rangedAttack(const std::string &target)
