@@ -10,11 +10,11 @@ public:
 	Sorcerer();
 	Sorcerer(std::string const &name, std::string const &title);
 	Sorcerer(const Sorcerer &copy);
-	~Sorcerer();
+	virtual ~Sorcerer();
 
 	Sorcerer &operator=(const Sorcerer &copy);
 
-	void polymorph(Victim const &) const;
+	virtual void polymorph(Victim const &) const;
 	const std::string &getName() const;
 
 	const std::string &getTitle() const;
