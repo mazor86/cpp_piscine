@@ -7,7 +7,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap: public ClapTrap
+class NinjaTrap: virtual public ClapTrap
 {
 public:
 	NinjaTrap();
@@ -24,6 +24,16 @@ public:
 	void ninjaShoebox(FragTrap &);
 	void ninjaShoebox(ScavTrap &);
 	void ninjaShoebox(NinjaTrap &);
+	
+protected:
+	static const unsigned int _initHitPoints = 60;
+	static const unsigned int _initMaxHitPoints = 60;
+	static const unsigned int _initEnergyPoints = 120;
+	static const unsigned int _initMaxEnergyPoints = 120;
+	static const unsigned int _initLevel = 1;
+	static const unsigned int _initMeleeAttackDamage = 60;
+	static const unsigned int _initRangeAttackDamage = 5;
+	static const unsigned int _initArmorDamageReduction = 0;
 };
 
 #endif

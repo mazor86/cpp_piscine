@@ -14,13 +14,13 @@ NinjaTrap::NinjaTrap(): ClapTrap()
 
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(name)
 {
-	this->_hitPoints = 60;
-	this->_maxHitPoints = 60;
-	this->_energyPoints = 120;
-	this->_maxEnergyPoints = 120;
-	this->_meleeAttackDamage = 60;
-	this->_rangeAttackDamage = 5;
-	this->_armorDamageReduction = 0;
+	this->_hitPoints = NinjaTrap::_initHitPoints;
+	this->_maxHitPoints = NinjaTrap::_initMaxHitPoints;
+	this->_energyPoints = NinjaTrap::_initEnergyPoints;
+	this->_maxEnergyPoints = NinjaTrap::_initMaxEnergyPoints;
+	this->_meleeAttackDamage = NinjaTrap::_initMeleeAttackDamage;
+	this->_rangeAttackDamage = NinjaTrap::_initRangeAttackDamage;
+	this->_armorDamageReduction = NinjaTrap::_initArmorDamageReduction;
 	std::cout << "NinjaTrap class parametrized constructor called" << std::endl;
 }
 
