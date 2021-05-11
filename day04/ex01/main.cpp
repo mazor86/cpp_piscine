@@ -53,6 +53,15 @@ int		main(void)
 	std::cout << student;
 	student.attack(dragon);
 	std::cout << student;
+	std::cout << "***** Try one more attack *****" << std::endl;
+	student.attack(dragon);
+	std::cout << "***** It's message after try attack with insufficient AP" << std::endl;
+	student.recoverAP();
+	std::cout << student;
+	student.recoverAP();
+	student.recoverAP();
+	student.recoverAP();
+	std::cout << student;
 
 	delete machinegun;
 	delete dragon;
