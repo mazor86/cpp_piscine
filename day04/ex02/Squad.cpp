@@ -6,10 +6,13 @@ Squad::Squad(): _count(0), _squad(NULL)
 
 Squad::~Squad()
 {
-	if (_count)
+	if (_squad)
 	{
 		for (int i = 0; i < _count; i++)
-			delete _squad[i];
+		{
+			if (_squad[i])
+				delete _squad[i];
+		}
 		delete [] _squad;
 	}
 }
@@ -24,11 +27,14 @@ Squad::Squad(const Squad &copy)
 
 Squad	&Squad::operator=(const Squad &copy)
 {
-	if (_count)
+	if (_squad)
 	{
 		for (int i = 0; i < _count; i++)
-			delete _squad[i];
-		delete[] _squad;
+		{
+			if (_squad[i])
+				delete _squad[i];
+		}
+		delete _squad;
 	}
 	_squad = new ISpaceMarine *[copy._count];
 	_count = copy._count;
@@ -59,6 +65,7 @@ int Squad::push(ISpaceMarine *marine)
 			_squad[i] = temp[i];
 		_squad[_count] = marine;
 		_count++;
+		delete [] temp;
 	}
 	return _count;
 }
