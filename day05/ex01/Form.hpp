@@ -16,8 +16,8 @@ public:
 	void beSigned(Bureaucrat &);
 
 	const std::string &getName() const;
-	const int getGradeToSign() const;
-	const int getGradeToExecute() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
 	bool getIsSigned() const;
 
 	class GradeTooHighException: public std::exception

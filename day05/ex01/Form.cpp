@@ -44,12 +44,12 @@ const std::string &Form::getName() const
 	return _name;
 }
 
-const int Form::getGradeToSign() const
+int Form::getGradeToSign() const
 {
 	return _gradeToSign;
 }
 
-const int Form::getGradeToExecute() const
+int Form::getGradeToExecute() const
 {
 	return _gradeToExecute;
 }
@@ -90,6 +90,6 @@ std::ostream &operator<<(std::ostream &ofs, const Form &obj)
 	ofs << "It's the Form: " << obj.getName() << std::endl;
 	ofs << "Is signed: " << obj.getIsSigned() << std::endl;
 	ofs << "Grade to sign: " << obj.getGradeToSign() << std::endl;
-	ofs << "Grade to execute: " << std::endl;
+	ofs << "Grade to execute: " << obj.getGradeToExecute() << std::endl;
 	return ofs;
 }

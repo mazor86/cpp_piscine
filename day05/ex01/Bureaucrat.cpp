@@ -56,7 +56,7 @@ void Bureaucrat::signForm(Form &form)
 	if (form.getIsSigned())
 	{
 		reason = "it already signed";
-		std::cout << this->_name << "cannot sign " << form.getName();
+		std::cout << this->_name << " cannot sign " << form.getName();
 		std::cout << " because " << reason << std::endl;
 	}
 	else
@@ -64,13 +64,13 @@ void Bureaucrat::signForm(Form &form)
 		try
 		{
 			form.beSigned(*this);
-			std::cout << this->_name << " signs " << form.getName();
+			std::cout << this->_name << " signs " << form.getName() << std::endl;
 		}
 		catch (std::exception & e)
 		{
 			std::cout << e.what() << std::endl;
 			reason = "grade is not enough";
-			std::cout << this->_name << "cannot sign " << form.getName();
+			std::cout << this->_name << " cannot sign " << form.getName();
 			std::cout << " because " << reason << std::endl;
 		}
 	}
