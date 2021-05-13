@@ -34,7 +34,7 @@ Form *Intern::makeForm(const std::string &type, const std::string &target)
 		{
 			temp = (this->*_method[i])(target);
 			std::cout << "Intern creates \"" << temp->getName() << "\"" << std::endl;
-			return (this->*_method[i])(target);
+			return temp;
 		}
 	}
 	throw NotFormException();

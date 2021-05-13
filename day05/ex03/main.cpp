@@ -30,6 +30,9 @@ int		main(void)
 
 	Form* shrub = someIntern.makeForm("shrubbery creation", "tree");
 	std::cout << GREEN << *shrub << RESET << std::endl;
-	
+
+	delete rrf;
+	delete pardon;
+	delete shrub;
 	return (0);
 }
