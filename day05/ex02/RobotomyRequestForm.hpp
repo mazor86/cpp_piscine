@@ -1,12 +1,12 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
-# include "AForm.hpp"
+# include "Form.hpp"
 # include <iostream>
 
 # define ROBOT_SIGN 72
 # define ROBOT_EXEC 45
 
-class RobotomyRequestForm: public AForm
+class RobotomyRequestForm: public Form
 {
 public:
 	RobotomyRequestForm(const std::string &target);

@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("Pardon Form", PRES_SIGN, PRES_EXEC), _target("Target")
+PresidentialPardonForm::PresidentialPardonForm(): Form("presidential pardon", PRES_SIGN, PRES_EXEC), _target("Target")
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-		: AForm("Pardon Form", PRES_SIGN, PRES_EXEC), _target(target)
+		: Form("presidential pardon", PRES_SIGN, PRES_EXEC), _target(target)
 {}
 
 PresidentialPardonForm::~PresidentialPardonForm()
@@ -13,13 +13,13 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
-		: AForm(copy.getName(), copy.getGradeToSign(), copy.getGradeToExecute()), _target(copy.getTarget())
+		: Form(copy.getName(), copy.getGradeToSign(), copy.getGradeToExecute()), _target(copy.getTarget())
 {
 }
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
 {
-	AForm::operator=(copy);
+	Form::operator=(copy);
 	return (*this);
 }
 

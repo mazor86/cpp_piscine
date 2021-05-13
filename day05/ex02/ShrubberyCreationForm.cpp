@@ -1,12 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-		: AForm("Shruberry Form", SHRU_SIGN, SHRU_EXEC), _target("target")
+		: Form("shrubbery creation", SHRU_SIGN, SHRU_EXEC), _target("target")
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-		: AForm("Shruberry Form", SHRU_SIGN, SHRU_EXEC), _target(target)
+		: Form("shrubbery creation", SHRU_SIGN, SHRU_EXEC), _target(target)
 {
 }
 
@@ -15,13 +15,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
-		: AForm(copy.getName(), copy.getGradeToSign(), copy.getGradeToExecute()), _target(copy.getTarget())
+		: Form(copy.getName(), copy.getGradeToSign(), copy.getGradeToExecute()), _target(copy.getTarget())
 {
 }
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
-	AForm::operator=(copy);
+	Form::operator=(copy);
 	return (*this);
 }
 

@@ -3,12 +3,12 @@
 # include <iostream>
 # include <string>
 # include <fstream>
-# include "AForm.hpp"
+# include "Form.hpp"
 
 # define SHRU_SIGN 145
 # define SHRU_EXEC 137
 
-class ShrubberyCreationForm: public AForm
+class ShrubberyCreationForm: public Form
 {
 public:
 	ShrubberyCreationForm(const std::string &target);

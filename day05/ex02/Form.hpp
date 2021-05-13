@@ -5,14 +5,14 @@
 class Bureaucrat;
 # include "Bureaucrat.hpp"
 
-class AForm
+class Form
 {
 public:
-	AForm();
-	AForm(const std::string &name, const int gradeToSign, const int gradeToExecute);
-	AForm(const AForm &copy);
-	virtual ~AForm();
-	AForm &operator=(const AForm &copy);
+	Form();
+	Form(const std::string &name, const int gradeToSign, const int gradeToExecute);
+	Form(const Form &copy);
+	virtual ~Form();
+	Form &operator=(const Form &copy);
 
 	void beSigned(Bureaucrat &);
 	void execute(Bureaucrat const & executor) const;
@@ -56,5 +56,5 @@ private:
 	void _checkGrade(int grade);
 };
 
-std::ostream &operator<<(std::ostream & ofs, const AForm &obj);
+std::ostream &operator<<(std::ostream & ofs, const Form &obj);
 #endif

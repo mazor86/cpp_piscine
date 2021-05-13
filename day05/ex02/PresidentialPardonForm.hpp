@@ -1,12 +1,12 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 # include <iostream>
-# include "AForm.hpp"
+# include "Form.hpp"
 
 # define PRES_SIGN 25
 # define PRES_EXEC 5
 
-class PresidentialPardonForm: public AForm
+class PresidentialPardonForm: public Form
 {
 public:
 	PresidentialPardonForm(const std::string &target);
