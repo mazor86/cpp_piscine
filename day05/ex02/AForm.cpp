@@ -80,7 +80,7 @@ void AForm::execute(Bureaucrat const & executor) const
 {
 	if (!_isSigned)
 		throw AForm::IsNotSignedException();
-	if (executor.getGrade() >= this->getGradeToExecute())
+	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	else
 		this->doAction();
@@ -108,7 +108,7 @@ const char *AForm::IsNotSignedException::what() const throw()
 
 std::ostream &operator<<(std::ostream &ofs, const AForm &obj)
 {
-	ofs << "It's the AForm: " << obj.getName() << std::endl;
+	ofs << "It's the form: " << obj.getName() << std::endl;
 	ofs << "Is signed: " << obj.getIsSigned() << std::endl;
 	ofs << "Grade to sign: " << obj.getGradeToSign() << std::endl;
 	ofs << "Grade to execute: " << obj.getGradeToExecute() << std::endl;
