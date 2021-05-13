@@ -77,12 +77,12 @@ void Form::_checkGrade(int grade)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("FORM ERROR!      The highest grade is 1");
+	return ("ERROR! The grade is too high");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return ("FORM ERROR!      The lowest grade is 150");
+	return ("ERROR! The grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &ofs, const Form &obj)
