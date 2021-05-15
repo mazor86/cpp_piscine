@@ -14,6 +14,8 @@ $(NAME): $(OBJS)
 %.o: %.cpp $(HEADER)
 	$(CC) $(FLAGS) -c -o $@ $<
 
+test: $(NAME)
+	@sh ./test.sh
 clean:
 	rm $(OBJS)
 
@@ -22,4 +24,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re test
