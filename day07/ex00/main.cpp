@@ -27,35 +27,18 @@ std::ostream & operator<<(std::ostream &os, const Awesome &awesome) {
 
 int main()
 {
-	std::cout << MAGENTA << "<int>" << RESET << std::endl;
 	int a = 2;
 	int b = 3;
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << GREEN << "swap" << RESET << std::endl;
-	swap( a, b );
+	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::cout << std::endl;
-	std::cout << MAGENTA << "<float>" << RESET << std::endl;
-	float e = 4.2;
-	float f = 2.1;
-	std::cout << "e = " << e << ", f = " << f << std::endl;
-	swap( e, f );
-	std::cout << GREEN << "swap" << RESET << std::endl;
-	std::cout << "e = " << e << ", f = " << f << std::endl;
-	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
-	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
-	std::cout << std::endl;
-	std::cout << MAGENTA << "<std::string>" << RESET << std::endl;
-	std::string str1 = "string1";
-	std::string str2 = "string2";
-	std::cout << "str1 = " << str1 << std::endl << "str2 = " << str2 << std::endl;
-	std::cout << GREEN << "swap" << RESET << std::endl;
-	swap( str1, str2 );
-	std::cout << "str1 = " << str1 << std::endl << "str2 = " << str2 << std::endl;
-	std::cout << "min( str1, str2 ) = " << ::min( str1, str2 ) << std::endl;
-	std::cout << "max( str1, str2 ) = " << ::max( str1, str2 ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	std::cout << std::endl;
 	std::cout << MAGENTA << "<Awesome>" << RESET << std::endl;
 	Awesome aOne(21);
