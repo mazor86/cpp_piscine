@@ -2,8 +2,8 @@
 NAME = array
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp
-HEADER = Array.tpp
+SRCS = main.cpp Pony.cpp
+HEADER = Array.hpp Pony.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
